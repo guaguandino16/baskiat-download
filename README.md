@@ -74,6 +74,27 @@ Para OpenRouter elige **Custom**, con dirección `https://openrouter.ai/api/v1` 
 
 Después: elige el agente, escribe lo que imaginas (o toca una sugerencia), pulsa **✨** para mejorar el texto y arrastra imágenes de referencia al panel. Cada cambio llega como una tarjeta: **Apply** o **Dismiss**.
 
+## Conectar Claude (MCP)
+
+BASKIAT es también un servidor MCP: Claude puede ver tu show y todo lo que BASKIAT tiene (visus, efectos, biblioteca) y proponer cambios. Llegan al chat de BASKIAT como tarjetas firmadas por Claude; tú decides con **Apply** o **Dismiss**. Solo se conecta desde el mismo ordenador y con BASKIAT abierto.
+
+En BASKIAT: **orbe → ⚙ → Connect Claude (MCP)** tiene todo listo para copiar.
+
+- **Claude Code** (en una terminal):
+  ```bash
+  claude mcp add --transport http baskiat http://localhost:3001/mcp
+  ```
+- **Claude Desktop**: *Settings → Developer → Edit Config*, añade esto y reinicia Claude (necesita [Node.js](https://nodejs.org)):
+  ```json
+  {
+    "mcpServers": {
+      "baskiat": { "command": "npx", "args": ["-y", "mcp-remote", "http://localhost:3001/mcp"] }
+    }
+  }
+  ```
+
+Luego pídele a Claude, por ejemplo: *«Mira mi show en BASKIAT y propón una escena para el drop»*.
+
 ## Opcional
 
 - **NDI** (enviar la imagen por red): instala [NDI Tools](https://ndi.video/tools/).
@@ -103,6 +124,7 @@ Para mover un proyecto a otro ordenador: **Menú → Export .avshow**, y en el o
 - **Mac**: open the DMG and drag BASKIAT to Applications. On first launch macOS blocks it because it is not notarized: go to *System Settings → Privacy & Security → Open Anyway*. If it says the app is damaged, run `xattr -dr com.apple.quarantine /Applications/BASKIAT.app` in Terminal.
 - **Windows**: run the installer. On *Windows protected your PC*, choose *More info → Run anyway*. Allow private-network access in the firewall prompt.
 - **First steps**: the welcome tour opens on first launch (Menu → How it works to see it again).
+- **Claude over MCP**: orb → ⚙ → Connect Claude. Claude Code: `claude mcp add --transport http baskiat http://localhost:3001/mcp`. Claude Desktop: add `npx -y mcp-remote http://localhost:3001/mcp` as an MCP server. Claude's changes arrive as cards to Apply or Dismiss.
 - **AI agents**: orb → ⚙ → pick Gemini (free key at aistudio.google.com/apikey), Claude (platform.claude.com) or Custom (OpenRouter: `https://openrouter.ai/api/v1`) → paste the key → Save.
 - **Updating** keeps your projects and keys.
 </details>
