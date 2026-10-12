@@ -18,7 +18,7 @@ Escenas que lanzas al compás, capas que modelas a mano y agentes de IA que hace
 
 | Sistema | Archivo | Requisitos |
 |---|---|---|
-| **macOS** | `BASKIAT-<versión>-arm64.dmg` | Mac con Apple Silicon (M1 o posterior), macOS 13 (Ventura) o superior |
+| **macOS** | `BASKIAT-<versión>-universal.dmg` | Cualquier Mac — Apple Silicon (M1 o posterior) o Intel — con macOS 13 (Ventura) o superior |
 | **Windows** | `BASKIAT-Setup-<versión>.exe` | Windows 10 u 11 de 64 bits |
 
 Los dos están en la página de [Releases](https://github.com/guaguandino16/baskiat-download/releases/latest), en la sección **Assets**.
@@ -27,7 +27,7 @@ Los dos están en la página de [Releases](https://github.com/guaguandino16/bask
 
 ## Instalar en Mac
 
-1. Descarga el `.dmg` y ábrelo con doble clic.
+1. Descarga el `.dmg` y ábrelo con doble clic. Se abre una ventana con BASKIAT, tu carpeta Aplicaciones y la guía **Install BASKIAT.pdf** (inglés y español).
 2. Arrastra **BASKIAT** a la carpeta **Applications** (Aplicaciones).
 3. Abre BASKIAT desde Aplicaciones. macOS dirá que no puede comprobar la app: pulsa **Hecho**.
 4. Ve a **Ajustes del Sistema → Privacidad y seguridad**, baja hasta el aviso de BASKIAT y pulsa **Abrir igualmente**. Confirma con tu contraseña o Touch ID.
@@ -111,7 +111,7 @@ Para mover un proyecto a otro ordenador: **Menú → Export .avshow**, y en el o
 
 - **Los agentes dan error 401**: la clave no es válida o no es una clave de API. Error **402**: tu cuenta no tiene saldo. **503 / high demand**: el modelo está saturado; prueba otra vez o cambia de modelo.
 - **No reacciona al sonido**: activa **Audio** arriba y permite el micrófono (Mac: Ajustes → Privacidad y seguridad → Micrófono).
-- **Mac con Intel**: por ahora BASKIAT solo funciona en Apple Silicon.
+- **Mac con Intel**: desde la 0.4.0 el mismo `.dmg` funciona en Mac Intel y Apple Silicon.
 
 ---
 
@@ -120,7 +120,7 @@ Para mover un proyecto a otro ordenador: **Menú → Export .avshow**, y en el o
 
 **BASKIAT** — live visuals you play like an instrument.
 
-- **Download** the `.dmg` (Mac, Apple Silicon, macOS 13+) or the `.exe` (Windows 10/11, 64-bit) from [Releases](https://github.com/guaguandino16/baskiat-download/releases/latest).
+- **Download** the `.dmg` (any Mac — Apple Silicon or Intel, macOS 13+) or the `.exe` (Windows 10/11, 64-bit) from [Releases](https://github.com/guaguandino16/baskiat-download/releases/latest).
 - **Mac**: open the DMG and drag BASKIAT to Applications. On first launch macOS blocks it because it is not notarized: go to *System Settings → Privacy & Security → Open Anyway*. If it says the app is damaged, run `xattr -dr com.apple.quarantine /Applications/BASKIAT.app` in Terminal.
 - **Windows**: run the installer. On *Windows protected your PC*, choose *More info → Run anyway*. Allow private-network access in the firewall prompt.
 - **First steps**: the welcome tour opens on first launch (Menu → How it works to see it again).
